@@ -16,6 +16,12 @@ tar -xzvf default.tar.gz
 cd pypa-setuptools-9616be97e6a7/
 sudo python setup.py install
 
+# start gateone service
+# sudo vi /etc/gateone/conf.d/10server.conf    
+# "origins": ["localhost", "127.0.0.1", "AY140703094435557aacZ", "10.171.27.1", "182.92.160.153"],
+sudo service gateone restart 
+# visit https://ip:443 to login
+
 # install Gateone
 git clone https://github.com/liftoff/GateOne.git
 cd GateOne
