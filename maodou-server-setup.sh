@@ -27,4 +27,11 @@ git clone https://github.com/liftoff/GateOne.git
 cd GateOne
 python setup.py install
 
-# install pp2code.com
+# install elasticsearch
+wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.1.1.deb
+sudo dpkg -i elasticsearch-1.1.1.deb
+# start elasticsearch service 
+sudo service elasticsearch restart
+# creating the index
+bundle exec rake environment elasticsearch:import:model CLASS='User' FORCE=true
+
