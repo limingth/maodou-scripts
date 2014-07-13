@@ -42,4 +42,12 @@ curl -XGET 'http://localhost:9200'
 # creating the index
 bundle exec rake environment elasticsearch:import:model CLASS='User' FORCE=true
 
+# install mysql2
+brew install mysql
+brew install ruby2.1.2
+gem install mysql2
 
+# find ppweb_development under /usr/local/var/mysql/ppweb_development/
+# mysql -D ppweb_development
+
+# mysql> show tables;
