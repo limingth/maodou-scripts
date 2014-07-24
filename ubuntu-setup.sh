@@ -26,7 +26,8 @@ echo http://182.92.160.153:8080/guacamole/
 
 # install noVNC
 git clone https://github.com/kanaka/noVNC.git
-cd noVNC && ./utils/launch.sh --vnc localhost:5901
+cd noVNC && nohup ./utils/launch.sh --vnc localhost:5901 &
+# http://182.92.71.188:6080/vnc_auto.html?host=182.92.71.188&port=6080&&password=maodou
 
 # install shellinabox
 git clone https://github.com/jayschwa/shellinabox.git
