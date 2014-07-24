@@ -28,6 +28,13 @@ echo http://182.92.160.153:8080/guacamole/
 git clone https://github.com/kanaka/noVNC.git
 cd noVNC && ./utils/launch.sh --vnc localhost:5901
 
+# install shellinabox
+git clone https://github.com/jayschwa/shellinabox.git
+sudo apt-get install libtool
+# $ aclocal
+# $ autoconf 
+cd shellinabox && ./configure && make 
+
 # install chrome
 sudo apt-get install chromium-browser -y
 
