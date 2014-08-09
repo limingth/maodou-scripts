@@ -79,6 +79,10 @@ gem install mysql2
 
 # mysql> show tables;
 
+# install redis-server
+sudo apt-get install redis-server
+redis-server &
+
 # cd ppweb and start rails server
 bundle install
 rake db:create
