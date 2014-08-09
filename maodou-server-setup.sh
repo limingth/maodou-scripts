@@ -42,7 +42,34 @@ curl -XGET 'http://localhost:9200'
 # creating the index
 bundle exec rake environment elasticsearch:import:model CLASS='User' FORCE=true
 
-# install mysql2
+# install mysql2 on ubuntu
+sudo apt-get install mysql-server
+sudo apt-get install mysql-client
+sudo apt-get install libmysql++-dev
+gem install mysql2
+
+# mysql error -> Access denied for user 'root'@'localhost' (using password: NO).
+/etc/init.d/mysql stop
+mysqld_safe --user=mysql --skip-grant-tables --skip-networking &
+mysql -u root mysql
+mysql> UPDATE user SET Password=PASSWORD('newpassword') where USER='root';
+mysql> FLUSH PRIVILEGES;
+mysql> quit
+/etc/init.d/mysql restart
+mysql -uroot -p
+Enter password: <输入新设的密码newpassword>
+mysql>
+
+# modify config/database.yml
+# username: root
+# password: mysql-password
+vi config/database.yml
+
+# cp 2 yml file
+cp config/database.yml.example config/database.yml
+cp config/settings.yml.example config/settings.yml
+
+# install mysql2 on mac
 brew install mysql
 brew install ruby2.1.2
 gem install mysql2
@@ -51,3 +78,9 @@ gem install mysql2
 # mysql -D ppweb_development
 
 # mysql> show tables;
+
+# cd ppweb and start rails server
+bundle install
+rake db:create
+rake db:migrate
+
