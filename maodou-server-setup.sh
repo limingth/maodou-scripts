@@ -63,7 +63,7 @@ mysql> quit
 /etc/init.d/mysql restart
 mysql -uroot -p
 Enter password: <输入新设的密码newpassword>
-mysql>
+mysql> grant select,insert,update,delete on book.* to ubuntu@localhost Identified by "";
 
 # modify config/database.yml
 # username: root
