@@ -54,6 +54,21 @@ sudo apt-get install gdm -y
 # without install ubuntu desktop, no Chinese fonts
 sudo apt-get install ubuntu-desktop -y
 
+# setup apache2
+# https://edgepeek.com/articles/119-ubuntu-shang-da-jian-ruby-on-rails-sheng-chan-huan-jing
+sudo apt-get install apache2
+sudo apt-get install libcurl4-openssl-dev
+sudo apt-get install apache2-threaded-dev
+sudo apt-get install libapr1-dev
+sudo apt-get install libaprutil1-dev
+sudo apt-get install libapache2-mod-passenger
 
+# How To Add Swap on Ubuntu 12.04
+# https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-12-04
+sudo swapon -s
+sudo dd if=/dev/zero of=/swapfile bs=1024 count=256k
+sudo mkswap /swapfile
+sudo swapon /swapfile
 
-
+# apache+passenger 实现rails应用的部署
+# http://binku.iteye.com/blog/483687
