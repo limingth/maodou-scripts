@@ -1,0 +1,15 @@
+language: ruby
+before_script:
+  - sudo apt-get install git -y
+
+rvm:
+  - 1.9.3
+  
+script: 
+  - git 
+
+after_script:
+  - echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCj/eHqb357rPLViF/MHV/xHSgOPTUQC5UiaHqMsL+XJhBosCeIe+CwC9dwOqi5rmt77r8gaOs0D1WGGHyEEHLfl4EAGS84yYl6PrOU0kVFDvQRYtkdTRYOoK1hIeX9iKtpVl5qwNaE+vJh4hS/uc9PfR/1gTf0DruK4MA6vhD5LyjKLgMiIA8L6l7Xda9Opxv2CTDzUw2QnTgpm7txiVrsYH2MJY1CmEfQfY5AvaxtmufkUrfsuXmJE4BE3KQ1upz/2r5uTz6WtBD/BAKy0wUjNbLlhBwwncnQQ+BVy3mhMYg3UtJZYk633aR09MrxhcpKd2CEhCmUwe/PVeDYhZp7 maodou@182.92.71.188" > ~/.ssh/known_hosts
+  - ssh maodou@182.92.71.18
+  - touch "I-am-a-good-boy"
+  
