@@ -7,7 +7,7 @@ rvm:
 script: 
   - git checkout master
   - cd master
-  - echo "test a new file" > new.file
+  - echo "test a new file" >> new.file
 
 after_script:
   - ls *
