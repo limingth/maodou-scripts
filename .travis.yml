@@ -1,0 +1,18 @@
+language: ruby
+before_script:
+  - sudo apt-get install git
+  
+rvm:
+  - 1.9.3
+script: 
+  - git checkout master
+  - cd master
+  - echo "test a new file" > new.file
+
+after_script:
+  - ls *
+  - git add *
+  - git config user.name "Li Ming"
+  - git config user.email "limingth@gmail.com"
+  - git commit -am "add file"
+  - git push origin master
