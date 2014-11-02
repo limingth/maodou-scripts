@@ -1,0 +1,200 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+		管理终端
+			</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- Apple iOS Safari settings -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="shortcut icon" href="http://www.aliyun.com/favicon.ico" type="image/x-icon" />
+  	<link rel="stylesheet" type="text/css" href="http://g.tbcdn.cn/aliyun/console/1.2.15/styles/bootstrap/bootstrap.css">
+  	<link rel="stylesheet" type="text/css" href="http://g.tbcdn.cn/aliyun/console/1.2.15/styles/angular-growl.min.css">
+  	<link rel="stylesheet" type="text/css" href="http://g.tbcdn.cn/aliyun/console/1.2.15/styles/console.css">
+  	<link rel="stylesheet" type="text/css" href="http://g.tbcdn.cn/aliyun/ecs/1.7.5/styles/ecs.console.css">
+ 	<!--[if lt IE 10]>
+    <script>
+      window.LOWEST_IE_VERSION = 10;
+    </script> 	
+  	<script src="http://g.tbcdn.cn/aliyun/console/1.2.15/scripts/browser-not-supported.js"></script> 
+  	<![endif]-->
+  	    <link rel="stylesheet" href="http://g.tbcdn.cn/aliyun/ecs/1.7.5/vnc/include/base.css" title="plain">
+    <script>
+      var INCLUDE_URI = 'http://g.tbcdn.cn/aliyun/ecs/1.7.5/vnc/include/';
+	  var URL_CONFIG = {
+	    "homeConsole": "http://home.console.aliyun.com/",
+    	"homeLink": "http://console.aliyun.com/ecs",
+    	"login": "https://account.aliyun.com/login/login.htm"
+	  }
+	  var isOfficialSite = true; 
+	  if(isOfficialSite == false){
+	  	URL_CONFIG.homeLink = "http://ecs4jst.console.aliyun.com/ecs";
+	  }
+	  
+	   			var ecsOperateForm = {
+			"url":"http://console.aliyun.com/ecs/home/operate.json",
+			"csrf_token":"qit8TTMRVpB1UhYWxL9sa1",
+			"action":"ecs,EcsOperateAction",
+			"eventSubmitDoOperate": '',
+			"eventSubmitDoBatchOperate": '',
+			"instanceId":"_fm.e._0.i",
+			"type":"_fm.e._0.t",
+			"passwd":"_fm.e._0.p",
+			"endTime":"_fm.e._0.e",
+			"hostname":"_fm.e._0.h",
+			"description": "_fm.e._0.d"
+		};	   	
+	   	var csrf_token = "qit8TTMRVpB1UhYWxL9sa1";   
+	   	
+    </script>
+    <script src="http://g.tbcdn.cn/aliyun/ecs/1.7.5/vnc/include/util.js"></script>
+    <script src="http://g.tbcdn.cn/aliyun/ecs/1.7.5/vnc/include/md5.js"></script>
+    <script src="http://g.tbcdn.cn/aliyun/ecs/1.7.5/vnc/include/des.js"></script>
+    <script src="http://g.tbcdn.cn/aliyun/ecs/1.7.5/vnc/include/webutil.js"></script>
+    <script src="http://g.tbcdn.cn/aliyun/ecs/1.7.5/vnc/include/base64.js"></script>
+    <script src="http://g.tbcdn.cn/aliyun/ecs/1.7.5/vnc/include/websock.js"></script>
+    <script src="http://g.tbcdn.cn/aliyun/ecs/1.7.5/vnc/include/keysymdef.js"></script>
+    <script src="http://g.tbcdn.cn/aliyun/ecs/1.7.5/vnc/include/keyboard.js"></script>
+    <script src="http://g.tbcdn.cn/aliyun/ecs/1.7.5/vnc/include/input.js"></script>
+    <script src="http://g.tbcdn.cn/aliyun/ecs/1.7.5/vnc/include/display.js"></script>
+    <script src="http://g.tbcdn.cn/aliyun/ecs/1.7.5/vnc/include/jsunzip.js"></script>
+    <script src="http://g.tbcdn.cn/aliyun/ecs/1.7.5/vnc/include/rfb.js"></script>
+    
+	<script src="http://g.tbcdn.cn/aliyun/console/1.2.15/vendor/zeroclipboard/ZeroClipboard.min.js"></script>
+	
+	<script src="http://g.tbcdn.cn/aliyun/ecs/1.7.5/scripts/nls/messages.js"></script>
+	     <script src="http://g.tbcdn.cn/aliyun/console/1.2.15/vendor/requirejs/require.js"></script>
+    <script>
+	    var ALIYUN_CONSOLE_CONFIG = {
+	    	ZEROCLIPBOARD_SWF_LOC: "http://g.tbcdn.cn/aliyun/console/1.2.15/vendor/zeroclipboard/ZeroClipboard.swf"
+	    }    
+        var vendorPath	= '../console/vendor';
+        var common = '../console/scripts';
+        require.config({
+          baseUrl: 'scripts',
+          skipDataMain: true,
+			paths: {
+				'angular': vendorPath +'/angular/angular',
+				'angular-route': vendorPath +'/angular-route/angular-route',
+				'angular-cookies': vendorPath +'/angular-cookies/angular-cookies',
+				'angular-sanitize': vendorPath +'/angular-sanitize/angular-sanitize.min',
+		      	'angular-animate': vendorPath +'/angular-animate/angular-animate',
+		      	'angular-growl': vendorPath +'/angular-growl/build/angular-growl',
+		      	'angular-ui-validate': vendorPath +'/angular-ui-utils/validate.min',
+				'ui.router': vendorPath +'/angular-ui-router/release/angular-ui-router.min',
+			    'ui.bootstrap': vendorPath +'/angular-bootstrap/ui-bootstrap',
+			    'ng-clip': vendorPath +'/ng-clip/ng-clip',
+			    'jQuery': vendorPath +'/jquery/jquery.min',
+				'app': 'vnc/app',
+		      	'common': common,
+		      	'common-tpl':  common + '/aliyun-console-tpl',
+		      	'aliyun-console-bootstrap-tpl': common + '/aliyun-console-bootstrap-tpl',
+		      	'ecsvnc-tpl': 'vnc/aliyun-ecs-vnc-tpl',
+		      	'angular-translate': vendorPath + '/angular-translate/angular-translate',
+		      	'bindonce': vendorPath + '/angular-bindonce/bindonce'
+			},
+			shim: {
+		      'jQuery': { exports:'jQuery'},
+		      'angular': { exports:'angular', deps:['jQuery']},
+		      'angular-sanitize': { deps:['angular']},
+		      'angular-animate': {deps:['angular']},
+		      'angular-cookies': { deps:['angular']},
+		      'angular-growl': { deps:['angular-animate']},
+		      'angular-ui-validate': {deps:['angular']},
+			  'ui.router': { deps:['angular']},
+		      'aliyun-console-bootstrap-tpl':  { deps:['angular']},
+		      'ui.bootstrap': { deps:['aliyun-console-bootstrap-tpl']},
+		      'ng-clip': {deps:['angular']},
+		      'common-tpl':  { deps:['angular']},
+		      'ecs-tpl': { deps:['angular']},
+		      'angular-locale-zh-cn': { deps:['angular']},
+		      'ecsvnc-tpl': { deps:['angular']},
+		      'angular-translate': { deps: ['angular']},
+		      'bindonce': { deps: ['angular']}
+			}
+        });
+    </script>
+    <script src="http://g.tbcdn.cn/aliyun/ecs/1.7.5/scripts/vnc/ecsVncConsole.js"></script>
+     	 <script type="text/javascript" src="http://g.tbcdn.cn/aliyun/ecs/1.7.5/locale/ng-locale/angular-locale_zh-cn.js"></script>
+	 <script type="text/javascript" src="http://g.tbcdn.cn/aliyun/ecs/1.7.5/locale/select2/select2_locale_zh-CN.js"></script> 
+		<script>
+      require(['vnc/bootstrap'], function(b){});
+    </script>
+    <style>
+     .vnc-head{
+      width:100%;
+      height:32px;
+      padding:4px 6px;
+      background:#EEE;
+      /*overflow:hidden;*/
+      position:absolute;
+      top:0px;
+      z-index:9;
+    }
+    .vnc-head .vnc-logo{
+      font-size:18px;
+      line-height:26px;
+      margin-right:12px;
+      color:#999;
+    }
+    .vnc-body{
+      width:100%;
+      /*padding-top:32px;*/
+      height:auto;
+      top:32px;
+      position:absolute;
+      bottom:0px;
+      z-index:0;
+    }
+    #noVNC_screen{
+      line-height: 0px;
+      font-size:0px;
+      padding:6px;
+    }
+    </style>
+ </head>
+
+<body style="margin: 5px;"><script type="text/javascript">
+(function (d) {
+var t=d.createElement("script");t.type="text/javascript";t.async=true;t.id="tb-beacon-aplus";
+t.setAttribute("exparams","category=&userid=&aplus&yunid=%22limingth%40gmail%2ecom%22");
+t.src=("https:"==d.location.protocol?"https://s":"http://a")+".tbcdn.cn/s/aplus_v2.js";
+d.getElementsByTagName("head")[0].appendChild(t);
+})(document);
+</script>
+
+  <div class="vnc-head" data-ng-controller="validateAuthInfoController">
+    <div data-ng-controller="vncConsoleController">
+      <div class="pull-left vnc-logo"></div>
+      <div ecs-vnc-server-command class="pull-left"></div>
+      <div id="noVNC_status" class="pull-left" style="padding-left:12px;">
+        			载入中……
+    			
+      </div>
+      <div class="pull-right">
+      	<span class="alert alert-info">
+			            	提示：如果出现持续黑屏，说明系统处于休眠状态，按任意键可以激活。
+        				</span>
+		<button data-ng-click="showVerificationDialog()">
+							修改VNC密码
+        				</button>
+       </div>
+    </div>
+  </div>
+  <div class="vnc-body">
+	  <div id="noVNC_screen">
+	      <canvas id="noVNC_canvas" width="640px" height="400px">
+			            	浏览器版本太低。请更新浏览器。
+						  
+	      </canvas>
+	  </div>
+  </div>
+  <div ng-controller="aliyunCommonController"></div>
+  <div growl></div>
+</body>
+</html>
