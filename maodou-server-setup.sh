@@ -19,6 +19,7 @@ sudo apt-get install rabbitmq-server -y
 wget "https://bitbucket.org/pypa/setuptools/get/default.tar.gz#egg=setuptools-dev" --no-check-certificate
 tar -xzvf default.tar.gz
 cd pypa-setuptools-9616be97e6a7/
+sudo apt-get install python-setuptools
 sudo python setup.py install
 
 # start gateone service
