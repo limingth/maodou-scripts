@@ -1,6 +1,13 @@
 # wget 'raw path of setup-ubuntu.sh'
 # . setup-ubuntu.sh
 
+# fix env vars
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+locale-gen en_US.UTF-8
+sudo dpkg-reconfigure locales
+
 # modify PS1
 echo export PS1=\"root@182.92.160.153 \\w\$ \" >> ~/.bashrc
 . ~/.bashrc
