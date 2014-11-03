@@ -8,6 +8,14 @@ export LC_ALL=en_US.UTF-8
 locale-gen en_US.UTF-8
 sudo dpkg-reconfigure locales
 
+# install node
+# https://www.digitalocean.com/community/tutorials/how-to-install-node-js-with-nvm-node-version-manager-on-a-vps
+curl https://raw.githubusercontent.com/creationix/nvm/v0.11.1/install.sh | bash
+source ~/.profile
+nvm ls-remote
+nvm install 0.10.13
+nvm use v0.10.13
+
 # modify PS1
 echo export PS1=\"root@182.92.160.153 \\w\$ \" >> ~/.bashrc
 . ~/.bashrc
