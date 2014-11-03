@@ -5,6 +5,9 @@
 echo export PS1=\"root@182.92.160.153 \\w\$ \" >> ~/.bashrc
 . ~/.bashrc
 
+# firstly update system to the lastest version
+sudo apt-get update
+
 # install curl
 sudo apt-get install curl -y
 
