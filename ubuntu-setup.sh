@@ -5,16 +5,23 @@
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-locale-gen en_US.UTF-8
-sudo dpkg-reconfigure locales
+# 没用 locale-gen en_US.UTF-8
+# 没用 sudo dpkg-reconfigure locales
+# 没用
+#   sudo apt-get install language-pack-UTF-8
+#     or
+#   sudo locale-gen UTF-8
 
 # install node
 # https://www.digitalocean.com/community/tutorials/how-to-install-node-js-with-nvm-node-version-manager-on-a-vps
 curl https://raw.githubusercontent.com/creationix/nvm/v0.11.1/install.sh | bash
 source ~/.profile
 nvm ls-remote
-nvm install 0.10.13
-nvm use v0.10.13
+nvm install 0.10.29
+nvm use v0.10.29
+
+# install rabbitmq-server 
+sudo apt-get install rabbitmq-server -y
 
 # modify PS1
 echo export PS1=\"root@182.92.160.153 \\w\$ \" >> ~/.bashrc
